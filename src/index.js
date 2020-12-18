@@ -1,8 +1,9 @@
 // Node modules
-const express = require('express')
-const app = express()
-const { config } = require('./config/index')
-const sequelize = require('./database/index')
+const express = require('express');
+const app = express();
+const { config } = require('./config/index');
+const sequelize = require('./database/index');
+const gaudiumApi = require('./routes/index.js');
 
 // body parser
 app.use(express.json());

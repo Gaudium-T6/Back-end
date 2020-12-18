@@ -1,5 +1,10 @@
-// App routes modules
-const { Router } = require('express')
-const router = Router()
+const express = require('express');
 
-module.exports = router;
+// App routes modules
+const router = express();
+
+function gaudiumApi(app) {
+  app.use('/api', router);
+}
+
+module.exports = gaudiumApi;
