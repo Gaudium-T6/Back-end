@@ -1,0 +1,27 @@
+{
+  "name": "gaudium-backend",
+  "version": "1.0.0",
+  "description": "a platzi master hub for projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "SET NODE_ENV=production & nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gaudium-T6/Back-end.git"
+  },
+  "keywords": [
+    "Backend"
+  ],
+  "author": "Gaudium team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gaudium-T6/Back-end/issues"
+  },
+  "homepage": "https://github.com/Gaudium-T6/Back-end#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
