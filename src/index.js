@@ -9,6 +9,7 @@ const toolsApi = require('./routes/tools');
 const techsApi = require('./routes/techs');
 const typesApi = require('./routes/types');
 const usersApi = require('./routes/users');
+const profilesApi = require('./routes/profile');
 const authenticationApi = require('./routes/auth');
 const cors = require('cors')
 const app = express();
@@ -28,6 +29,7 @@ toolsApi(app);
 techsApi(app);
 typesApi(app);
 usersApi(app);
+profilesApi(app);
 
 
 // documentation
