@@ -8,7 +8,7 @@ class ProjectsService {
   async getProjects() {
     console.log('getting projects');
     const projects = await Project.findAll({
-      include: ['type']
+      include: ['type', 'status']
     });
     return projects || [];
   }

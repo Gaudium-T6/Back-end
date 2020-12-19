@@ -77,6 +77,29 @@
           }
         }
       }
+    },
+    "/statuses": {
+      "get": {
+        "tags": [
+          "Statuses"
+        ],
+        "summary": "retrieves all tools",
+        "description": "A status is a current state of a project",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema" : {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/status"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -150,6 +173,25 @@
           "type": "string"
         },
         "type": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "status": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
           "type": "string"
         },
         "created_at": {
