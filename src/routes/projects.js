@@ -18,7 +18,7 @@ function projectsApi(app) {
     }  catch (e) {
       res.json({
         error: true,
-        message: 'Projects retrieved',
+        message: 'Projects fail',
         log: e
       });
 

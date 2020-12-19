@@ -1,5 +1,6 @@
-const { Sequelize, DataTypes } = require('sequelize');
+const { DataTypes } = require('sequelize');
 const DbConnection = require('../database/index');
+const { TypeModel } = require('./type');
 
 const Project = DbConnection.define('Projects', {
   name: {
@@ -43,5 +44,7 @@ const Project = DbConnection.define('Projects', {
   updatedAt: 'updated_at',
   createdAt: 'created_at',
 });
+
+Project.belongsTo(TypeModel, { foreignKey: 'id', as: 'type' })
 
 module.exports =  { Project };
