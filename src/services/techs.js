@@ -1,16 +1,15 @@
-const { Tech } = require('../models/tech');
+const { TechModel } = require('../models/tech');
 
-class TechsService {
+class TechService {
   constructor() {
-    this.model = Tech;
+    this.model = TechModel;
   }
 
   async getTechs() {
-    console.log('getting techs');
-    const techs = await Tech.findAll();
+    const techs = await this.model.findAll();
     return techs || [];
   }
 
 }
 
-module.exports = TechsService;
+module.exports = TechService;

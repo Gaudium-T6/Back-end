@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const DbConnection = require('../database/index');
+const DB = require('../database/index');
 
-const Tech = DbConnection.define('Technologies',
+const TechModel = DB.define('Technologies',
   {
     name: {
       type: DataTypes.STRING,
@@ -18,4 +18,4 @@ const Tech = DbConnection.define('Technologies',
   }
 );
 
-module.exports =  { Tech };
+module.exports =  { TechModel };
