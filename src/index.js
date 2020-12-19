@@ -7,6 +7,7 @@ const projectsApi = require('./routes/projects');
 const coursesApi = require('./routes/courses');
 const toolsApi = require('./routes/tools');
 const techsApi = require('./routes/techs');
+const typesApi = require('./routes/types');
 
 
 const app = express();
@@ -17,6 +18,7 @@ projectsApi(app);
 coursesApi(app);
 toolsApi(app);
 techsApi(app);
+typesApi(app);
 
 // documentation
 app.use('/', swaggerUi.serve, swaggerUi.setup(apiDocumentation));
