@@ -1,5 +1,6 @@
 const express = require('express');
 const TypeService = require('../services/types');
+const typeController = require('../controllers/type');
 
 function typesApi(app) {
 
@@ -26,32 +27,7 @@ function typesApi(app) {
     }
   });
 
-  router.post('/api/type', async function(req, res){
-    try {
-      const data = await typeService.newType(req.body.name);
-
-      if (data == null) {
-        const newType = new TypeModel(
-          {
-            name: req.body.name,
-            description: req.body.description,
-          }
-        );
-
-        //save to DB
-        newType.save((err, data) => {
-          if (err) return res.json("Something is wrong. Please check.");
-          return res.json(data);
-        });
-      }
-      else {
-        return res.json(`${req.body.name} Type already exists.`);
-      }
-    }
-    finally {
-
-    }
-  });
+  router.post('/api/type', typeController.newType);
 
 }
 
