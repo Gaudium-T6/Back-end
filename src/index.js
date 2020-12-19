@@ -3,14 +3,17 @@ const { config } = require('./config/index');
 const gaudiumApi = require('./routes/index.js');
 const swaggerUi = require('swagger-ui-express');
 const apiDocumentation = require('./swagger.json');
+const projectsApi = require('./routes/projects');
 
 
 const app = express();
 
+// api routes
+// routes
+projectsApi(app);
+gaudiumApi(app);
 // documentation
 app.use('/', swaggerUi.serve, swaggerUi.setup(apiDocumentation));
-// api routes
-gaudiumApi(app);
 
 //App endpoint
 app.listen(config.port, () => {

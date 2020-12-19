@@ -5,10 +5,9 @@
     "version": "1.0.0",
     "title": "Gaudium Backend"
   },
-  "host": "https://github.com/Gaudium-T6",
+  "host": "gaudiumapi.herokuapp.com/api",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
@@ -19,24 +18,18 @@
         ],
         "summary": "retrieves all projects",
         "description": "Handle project resources",
-        "operationId": "Login",
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "project body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/project"
-            }
-          }
-        ],
         "responses": {
-          "default": {
-            "description": "Successful operation"
+          "200": {
+            "description": "Successful operation",
+            "schema" : {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/project"
+              }
+            }
           }
         }
       }
