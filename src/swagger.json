@@ -55,6 +55,28 @@
           }
         }
       }
+    },
+    "/tools": {
+      "get": {
+        "tags": [
+          "Tools"
+        ],
+        "summary": "retrieves all tools",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema" : {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/tool"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -83,7 +105,7 @@
         },
         "difficult_rating": {
           "type": "string",
-          "options": ["basico", "intermedio", "avazando"]
+          "options": ["básico", "intermedio", "avanzado"]
         },
         "requirements": {
           "type": "string"
@@ -103,6 +125,31 @@
           "type": "string"
         },
         "url": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "tool": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "type": {
           "type": "string"
         },
         "created_at": {
