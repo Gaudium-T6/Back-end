@@ -1,9 +1,9 @@
 const express = require('express');
-const TechsService = require('../services');
+const TechService = require('../services/techs');
 
 function techsApi(app) {
 
-  const techService = new TechsService();
+  const techService = new TechService();
 
   const router = express.Router();
   app.use('/api/techs', router);
@@ -19,7 +19,7 @@ function techsApi(app) {
     }  catch (e) {
       res.json({
         error: true,
-        message: 'Techs retrieved',
+        message: 'Techs retrieved, with errors',
         log: e
       });
 
