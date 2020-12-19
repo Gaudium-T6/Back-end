@@ -1,4 +1,5 @@
 const { Project } = require('../models/project');
+const { Tech } = require('../models/tech');
 class ProjectsService {
   constructor() {
     this.table = 'projects';
@@ -11,7 +12,20 @@ class ProjectsService {
     return projects || [];
   }
 
+}
+
+class TechsService {
+  constructor() {
+    this.table = 'techs';
+    this.model = Tech;
+  }
+
+  async getTechs() {
+    console.log('getting techs');
+    const techs = await Tech.findAll();
+    return techs || [];
+  }
 
 }
 
-module.exports = ProjectsService;
+module.exports = { ProjectsService, TechsService};
