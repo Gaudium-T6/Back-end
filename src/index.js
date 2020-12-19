@@ -11,6 +11,7 @@ const typesApi = require('./routes/types');
 const usersApi = require('./routes/users');
 const profilesApi = require('./routes/profile');
 const authenticationApi = require('./routes/auth');
+const statusesApi = require('./routes/statuses');
 const cors = require('cors')
 const app = express();
 
@@ -30,6 +31,7 @@ techsApi(app);
 typesApi(app);
 usersApi(app);
 profilesApi(app);
+statusesApi(app);
 
 
 // documentation
