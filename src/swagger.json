@@ -8,6 +8,7 @@
   "host": "gaudiumapi.herokuapp.com/api",
   "basePath": "/",
   "schemes": [
+    "http",
     "https"
   ],
   "paths": {
@@ -17,7 +18,6 @@
           "Projects"
         ],
         "summary": "retrieves all projects",
-        "description": "Handle project resources",
         "produces": [
           "application/json"
         ],
@@ -28,6 +28,28 @@
               "type": "array",
               "items": {
                 "$ref": "#/definitions/project"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/courses": {
+      "get": {
+        "tags": [
+          "Courses"
+        ],
+        "summary": "retrieves all courses",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema" : {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/courses"
               }
             }
           }
@@ -71,6 +93,25 @@
         },
         "status_id": {
           "type": "number"
+        }
+      }
+    },
+    "courses": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
         }
       }
     }
