@@ -9,8 +9,7 @@ const toolsApi = require('./routes/tools');
 const techsApi = require('./routes/techs');
 const typesApi = require('./routes/types');
 const usersApi = require('./routes/users');
-
-
+const cors = require('cors')
 const app = express();
 
 // api routes
@@ -21,6 +20,9 @@ toolsApi(app);
 techsApi(app);
 typesApi(app);
 usersApi(app);
+
+// cors 
+app.use(cors());
 
 // documentation
 app.use('/', swaggerUi.serve, swaggerUi.setup(apiDocumentation));
