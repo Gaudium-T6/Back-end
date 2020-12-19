@@ -4,14 +4,18 @@ const gaudiumApi = require('./routes/index.js');
 const swaggerUi = require('swagger-ui-express');
 const apiDocumentation = require('./swagger.json');
 const projectsApi = require('./routes/projects');
+const coursesApi = require('./routes/courses');
+const toolsApi = require('./routes/tools');
 const techsApi = require('./routes/techs');
+
 
 const app = express();
 
 // api routes
-// routes
-projectsApi(app);
 gaudiumApi(app);
+projectsApi(app);
+coursesApi(app);
+toolsApi(app);
 techsApi(app);
 
 // documentation
