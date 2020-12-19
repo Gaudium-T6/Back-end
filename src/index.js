@@ -9,12 +9,18 @@ const toolsApi = require('./routes/tools');
 const techsApi = require('./routes/techs');
 const typesApi = require('./routes/types');
 const usersApi = require('./routes/users');
+const authenticationApi = require('./routes/auth');
 const cors = require('cors')
 const app = express();
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+
 // cors
 app.use(cors());
 
 // api routes
+authenticationApi(app);
 gaudiumApi(app);
 projectsApi(app);
 coursesApi(app);
