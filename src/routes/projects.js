@@ -1,5 +1,5 @@
 const express = require('express');
-const ProjectsService = require('../services');
+const ProjectsService = require('../services/projects');
 
 function projectsApi(app) {
 
@@ -8,9 +8,8 @@ function projectsApi(app) {
   const router = express.Router();
   app.use('/api/projects', router);
 
-  router.get('/', async function(req, res, next){
+  router.get('/', async function(req, res){
     try {
-      console.log('testing');
       const projects =  await projectService.getProjects();
         res.json({
           data: projects,
