@@ -10,7 +10,6 @@ class UsersService {
     return users || [];
   }
 
-
 }
 
 module.exports = UsersService;
