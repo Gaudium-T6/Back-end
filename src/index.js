@@ -11,6 +11,8 @@ const typesApi = require('./routes/types');
 const usersApi = require('./routes/users');
 const cors = require('cors')
 const app = express();
+// cors
+app.use(cors());
 
 // api routes
 gaudiumApi(app);
@@ -21,8 +23,6 @@ techsApi(app);
 typesApi(app);
 usersApi(app);
 
-// cors 
-app.use(cors());
 
 // documentation
 app.use('/', swaggerUi.serve, swaggerUi.setup(apiDocumentation));
